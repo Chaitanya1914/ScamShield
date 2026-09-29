@@ -66,8 +66,6 @@ st.markdown("""
 <style>
     /* Global Background and Typography */
     .stApp {
-        background-color: #f8fafc;
-        color: #0f172a;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     }
 
@@ -323,18 +321,17 @@ with st.sidebar:
 
     st.divider()
 
-    st.markdown("### ⚙️ System Configuration")
-    api_key_input = st.text_input(
-        "🔑 Google Gemini API Key",
-        type="password",
-        help="Enter your free API key from Google AI Studio (aistudio.google.com). If empty, the system operates in deterministic offline mock mode.",
-    )
-    api_key = api_key_input.strip()
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    
+    st.markdown("### ⚙️ System Status")
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
     if api_key:
-        st.success("🟢 **Live Gemini API Connected**")
+        st.success("🟢 **Live Threat Intelligence API Connected**")
     else:
-        st.info("🟡 **Offline Intelligence Active**\n\n*Running in deterministic offline mode for automated tests and demonstrations. Enter an API key for live Gemini 2.0 multimodal analysis.*")
+        st.error("🔴 **API Offline:** Missing GEMINI_API_KEY in .env file.")
 
     st.divider()
 
