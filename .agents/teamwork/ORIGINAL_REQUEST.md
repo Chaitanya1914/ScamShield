@@ -72,3 +72,73 @@ Please update the Strike Mode (Honeypot) persona in the backend code. The user h
 USER REQUEST / HIGH PRIORITY:
 The user is requesting to accelerate delivery. Please enter "Speed Mode". 
 Do not sacrifice core functionality (API, Voice, Logging, Strike Mode), but please skip any non-essential cosmetic polishing, redundant testing, or over-engineering in Milestone 2 and Milestone 3. Deliver the functional Streamlit UI MVP as quickly as possible.
+
+## 2026-10-01T01:42:44Z
+
+Transform **ScamShield** from a Gemini-API-wrapper prototype into a **production-grade, self-sufficient AI scam detection platform**. The core transformation is: the PRIMARY detection engine must be a locally-trained ML model that runs with ZERO external API keys. The Gemini API becomes an OPTIONAL enhancement layer for advanced features (image analysis, conversational honeypot), not the core product.
+
+The existing codebase has: `backend.py` (1225 lines, Gemini-dependent), `app.py` (820 lines, Streamlit UI with CSS contrast bugs), `scam_detector.py` (622 lines, untrained ML engine skeleton), and `India_Cyber_Scam_Hinglish_Dataset.csv` (10,000 labeled Hinglish messages: 5000 scam / 5000 safe, 7 scam categories). A `.venv` Python 3.11 virtual environment exists with `streamlit`, `google-generativeai`, `gTTS`, `pandas`, `Pillow`, `scikit-learn`, `scipy`, and `python-dotenv` already installed.
+
+Working directory: c:\Users\chait\OneDrive\Desktop\Scam Shield
+Integrity mode: development
+
+## Requirements
+
+### R1. Local ML Engine as Primary Detection (Zero API Keys)
+The application must use a locally-trained machine learning model as its PRIMARY scam detection engine. The model must be trained on the included `India_Cyber_Scam_Hinglish_Dataset.csv` (10,000 messages). It must perform both binary classification (scam vs safe) and multi-class category prediction (bank_kyc, police_digital_arrest, police_blackmail, lottery, amazon, aadhaar, relative). The model must achieve ≥90% cross-validated accuracy on the dataset. The trained model must be serialized to disk (`scamshield_model.pkl`) and auto-loaded on app startup. The entire detection pipeline (text analysis, risk scoring, category prediction, IoC extraction, red flag generation) must work with ZERO API keys and ZERO internet connection. The Gemini API becomes an optional secondary layer used ONLY for: (a) WhatsApp screenshot image analysis (multimodal vision) and (b) Strike Mode conversational honeypot replies. The app must clearly indicate in the UI when results come from the local ML model vs the cloud API.
+
+### R2. Professional UI with Zero Visual Bugs
+The Streamlit UI must have zero contrast/readability issues in both light and dark mode. The API key must NEVER be visible on the frontend — it must be loaded exclusively from a `.env` file via `python-dotenv`. All text must be readable against its background in every card, banner, and section. The UI must display the ML model's training metrics (accuracy, F1-score) in the sidebar to prove to judges that a real model is running. The "Rahul" persona (not "Pushpa Devi") must be used consistently everywhere in the UI and backend code.
+
+### R3. Comprehensive Test Suite (Brutal Audit)
+A test suite must exist that programmatically validates: (a) the local ML model trains successfully and achieves ≥90% cross-val accuracy, (b) the model correctly classifies at least 5 known scam messages as High risk and 5 known safe messages as Low risk, (c) IoC extraction (phone numbers, UPI IDs, URLs) works correctly on at least 3 test cases each, (d) the threat logging system creates/appends to `threat_log.csv` with CSV injection protection, (e) the Hindi voice warning generates a valid audio stream, (f) the app launches without import errors. Every test must print explicit PASS/FAIL with the test name.
+
+### R4. Production Architecture & Clean Code
+The codebase must be modular with clear separation: ML engine (`scam_detector.py`), backend API layer (`backend.py`), and UI (`app.py`). All public functions must have docstrings. Error handling must gracefully handle: missing API key (falls back to local ML), missing dataset (clear error message), corrupted model file (auto-retrains), network failures. The `requirements.txt` must include ALL dependencies (including `scikit-learn`, `scipy`, `joblib`). A `README.md` must exist with: project description, architecture diagram (text-based), setup instructions, and how to run.
+
+### R5. Business-Ready API Layer
+The backend must expose a clean, importable Python API that could be wrapped in a REST endpoint: `analyze_threat(text=..., image=...) -> dict`. The response schema must be documented. The threat intelligence logging (`threat_log.csv`) must include: timestamp, source channel, risk level, confidence score, scam category, and all extracted IoCs. This positions the product as an enterprise API, not just a web app.
+
+## Acceptance Criteria
+
+### ML Model Quality
+- [ ] Running `python scam_detector.py` trains the model and prints cross-validated accuracy ≥90%
+- [ ] The trained model file `scamshield_model.pkl` is created on disk
+- [ ] The model correctly classifies "Aapka SBI account block ho jayega KYC pending. OTP share karein 9876543210" as High risk
+- [ ] The model correctly classifies "Beta ghar aa gaya hoon darwaza khol do" as Low risk
+- [ ] Detection works with ZERO API key set (GEMINI_API_KEY unset or empty)
+
+### UI Quality
+- [ ] `streamlit run app.py` launches without errors
+- [ ] No API key input field is visible anywhere on the frontend
+- [ ] All text is readable (no white-on-white or black-on-black) in both light and dark themes
+- [ ] The sidebar displays ML model metrics (accuracy, F1-score)
+- [ ] The "Rahul" persona name appears consistently (zero mentions of "Pushpa Devi" in user-facing text)
+
+### Test Suite
+- [ ] Running `python tests/test_suite.py` executes all tests and prints PASS/FAIL for each
+- [ ] All tests pass with ZERO API keys configured
+- [ ] At least 20 individual test cases exist covering ML accuracy, IoC extraction, threat logging, voice synthesis, and import validation
+
+### Code Quality
+- [ ] `README.md` exists with setup instructions and architecture overview
+- [ ] `requirements.txt` includes all dependencies needed for a fresh install
+- [ ] All public functions have docstrings
+- [ ] No hardcoded API keys anywhere in the codebase
+- [ ] The backend gracefully handles missing API key by falling back to local ML
+
+### Verification Script
+- [ ] A script `tests/test_suite.py` exists that runs ALL acceptance tests programmatically
+- [ ] The script exits with code 0 if all tests pass, code 1 if any fail
+- [ ] The script works on a fresh clone with only `pip install -r requirements.txt` as setup
+
+## Directive Update — 2026-10-01T04:20:20Z
+
+IMPORTANT UPDATE: The user has granted full autonomy — no approvals needed. Parent agent is training the local ML model (scam_detector.py) directly and saving as scamshield_model.pkl. Focus workers on:
+1. Integrating the trained model into backend.py (making it PRIMARY, Gemini OPTIONAL)
+2. Fixing ALL UI contrast bugs in app.py and hiding the API key
+3. Writing the brutal test suite (tests/test_suite.py) with 20+ tests
+4. Creating README.md and updating requirements.txt
+5. Cleaning ALL "Pushpa Devi" references — replace with "Rahul" everywhere
+
+Do NOT re-train the ML model — scamshield_model.pkl is being trained directly. Speed is critical.

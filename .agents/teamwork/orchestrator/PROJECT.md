@@ -1,47 +1,50 @@
-# Project: ScamShield
+# Project: ScamShield — Production AI Scam Detection Platform
 
 ## Architecture
 - **Language & Runtime**: Python 3.11.9 (`.venv`) on Windows
+- **Detection Philosophy**: Self-Sufficient Local ML as PRIMARY (Zero API Keys) + Gemini Multimodal Vision as OPTIONAL Secondary.
 - **Core Modules**:
-  - `backend.py`: All computational logic, Gemini API interactions (multimodal without OCR), structured JSON schemas, in-memory `gTTS` audio synthesis, CSV threat logging, Pushpa Devi honeypot prompt generation, dynamic dataset sampling, and offline mock fallbacks.
-  - `app.py`: Streamlit frontend implementing an official National Cyber Crime Reporting Portal (NCRP) / State Cyber Police aesthetic (Navy `#0b3b60` / Slate `#f8fafc` / clean white cards), Omnichannel tabs, Sentinel dashboard, Strike Mode chat-bubbles, alert banners, and API key management.
-  - `verify.py`: Standalone CLI verification script testing `backend.py` threat analysis and CSV logging, outputting explicit PASS/FAIL.
-  - `requirements.txt`: Python package manifest strictly excluding `pytesseract` and external OCR binaries.
-- **Data Flow**:
-  1. User/Tester inputs SMS/Email text, WhatsApp Screenshot (PIL Image), or loads from `India_Cyber_Scam_Hinglish_Dataset.csv`.
-  2. Input dispatched to `backend.analyze_threat()`. If API key present, calls Gemini API (`gemini-2.0-flash` / `gemini-1.5-flash`) with structured JSON schema; otherwise uses deterministic offline mock pattern engine for automated tests.
-  3. If Sentinel Mode: displays structured threat metrics. If High/Medium risk, `backend.generate_voice_warning()` produces Hindi audio via `gTTS` (in-memory BytesIO) and `backend.log_threat()` appends IoCs to `threat_log.csv`. State Cyber Police alert banner is displayed in `app.py`.
-  4. If Strike Mode: input passed to `backend.generate_honeypot_reply()`. Returns Hinglish response in Pushpa Devi persona, rendered in `st.chat_message` chat-bubble format with multi-turn support.
+  - `scam_detector.py`: High-performance local ML engine trained on `India_Cyber_Scam_Hinglish_Dataset.csv` (10,001 rows: 5,000 safe, 5,001 scam across 7 categories). Features: TF-IDF (1,2 ngrams) + 12 hand-crafted domain signal features. Classifiers: Calibrated Logistic Regression (binary, >99% CV-accuracy) + Calibrated Multi-Class Classifier (7 categories + safe). Obfuscation-resistant IoC extractors (phone, UPI, URL). Auto-loads `scamshield_model.pkl`, auto-retrains if corrupted, and provides non-crashing heuristic fallback.
+  - `backend.py`: Production-grade API layer exposing `analyze_threat(text=..., image=...) -> dict`. Routes all text inputs directly to local ML with ZERO API keys required and ZERO internet connection. Relegates Gemini API strictly to an OPTIONAL secondary layer for (a) WhatsApp screenshot multimodal vision and (b) Strike Mode conversational honeypot. In-memory `gTTS` Hindi voice warning synthesis (`io.BytesIO`). Thread-safe threat logging with CWE-1236 CSV injection protection (`threat_log.csv`).
+  - `app.py`: Streamlit frontend with zero CSS contrast bugs in both light and dark themes. High-contrast government-portal theme (Navy `#0b3b60` / Slate `#f8fafc` / clean white cards). API key loaded exclusively from `.env` via `python-dotenv` (zero frontend input fields). Sidebar displays live ML metrics card (CV accuracy, F1-score, dataset size, engine status) and Cloud API status. Sentinel Mode displays source badge (`🛡️ Local ML Engine (Offline)` vs `☁️ Gemini Multimodal Vision API (Cloud)`). Strict "Rahul" persona consistency everywhere.
+  - `tests/test_suite.py`: Comprehensive test suite containing 31 discrete programmatic tests validating ML cv-accuracy ≥90%, 5 known scams as High risk, 5 safe messages as Low risk, IoC extraction (phone, UPI, URL ≥3 each), threat logging with CSV injection defense, Hindi voice synthesis, and app import validation with zero API keys. Exits 0 on success, 1 on failure.
+  - `requirements.txt`: Complete package manifest including `scikit-learn`, `scipy`, `numpy`, `joblib`, `streamlit`, `google-generativeai`, `gTTS`, `Pillow`, `pandas`, and `python-dotenv`.
+  - `README.md`: Professional enterprise documentation with ASCII architecture diagram, quickstart, API documentation, ML benchmarks, and security model.
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |
 |---|---------|-------------|-----------|--------|
-| 1 | Python Environment & Clean Dependencies | Setup `.venv`, install packages (streamlit, google-generativeai, gTTS, Pillow, pandas, python-dotenv), remove pytesseract | M1 | survey |
-| 2 | Multimodal Gemini Analysis (Zero OCR) | Direct PIL Image / text analysis in `backend.py` via Gemini API without OCR | M1 | survey / R1 |
-| 3 | Structured Threat Assessment Schema | Strict JSON response format (risk_level, confidence, category, red_flags, psychological_tactics, extracted_identifiers, recommended_action) | M1 | survey / R2 |
-| 4 | Offline Mock Fallback Engine | Deterministic fallback analysis in `backend.py` for automated tests without API keys | M1 | survey / verify.py |
-| 5 | Thread-Safe Threat Logging | Thread-safe append to `threat_log.csv` with CSV formula injection mitigation and IoC extraction | M1 | survey / R4 |
-| 6 | In-Memory Hindi Voice Warning (gTTS) | Accessible Hindi voice warning synthesis using `io.BytesIO` to prevent Windows file-lock errors | M1 | survey / R2 |
-| 7 | Rahul / Honeypot Persona Generation | Conversational Hinglish stall tactics by confused young user/college student named 'Rahul' with anti-exfiltration boundaries | M1 | survey / R3 / update |
-| 8 | Live Threat Simulator from Dataset | Dynamic sampler from `India_Cyber_Scam_Hinglish_Dataset.csv` covering ≥5 distinct scam categories | M1 | survey / R1 |
-| 9 | GovTech State Cyber Police UI Theme | Clean white/blue government portal style (Navy `#0b3b60`, Slate `#f8fafc`, accessible contrast) | M2 | survey / R5 |
-| 10 | Omnichannel Input Tabs | Streamlit tabs for (1) SMS/Email Text, (2) WhatsApp Image Upload, (3) Live Threat Simulator | M2 | survey / R1 |
-| 11 | Sentinel Mode Visual Dashboard | Visual risk cards, confidence gauge, red flags checklist, psychological breakdown, audio player | M2 | survey / R2 |
-| 12 | Strike Mode Chat Bubble UI | Interactive multi-turn chat interface using `st.chat_message` and session state for Rahul persona | M2 | survey / R3 / update |
-| 13 | State Cyber Police Alert Banner | Prominent alert banner confirming logging to Cyber Police Threat Database on High/Medium threats | M2 | survey / R4 |
-| 14 | Graceful API Key Error Handling | Clear UI feedback for missing or invalid Gemini API keys without crashing | M2 | survey / R5 |
-| 15 | Verification Script (`verify.py`) | Automated test script verifying backend analysis and threat logging returning PASS/FAIL | M3 | survey / Acceptance |
-| 16 | 100% E2E Acceptance & Adversarial Hardening | Comprehensive test suite testing all R1-R5 criteria, negative edge cases, and adversarial validation | M3 | survey / Final |
+| 1 | Local ML Model Serialization & Auto-Load | `scamshield_model.pkl` loaded on startup; metadata (accuracy, F1, timestamp) exposed via `get_metrics()` | M1 | R1 |
+| 2 | Offline Text Analysis (Zero API Keys) | All text messages analyzed locally via `scam_detector.py` with >99% accuracy; zero API keys or internet needed | M1 | R1 |
+| 3 | Calibrated Risk Scoring & Category Prediction | High/Medium/Low risk scoring and 7 scam category predictions (bank_kyc, police_digital_arrest, etc.) | M1 | R1 |
+| 4 | Obfuscation-Resistant IoC Regex Extractors | Indian phone numbers (handles dots, spaces, +91, 0), strict UPI VPAs, and defanged URLs | M1 | R1, R3 |
+| 5 | Enterprise Public API Contract | `analyze_threat(text=..., image=...) -> dict` with normalized schema and `detection_source` field | M1 | R4, R5 |
+| 6 | Optional Multimodal Vision Secondary Layer | Gemini API used for WhatsApp screenshot images without OCR; deterministic mock fallback if key absent | M1 | R1, R5 |
+| 7 | Secure Threat Intelligence Logging | Thread-safe logging to `threat_log.csv` with formula injection mitigation (CWE-1236) | M1 | R4, R5 |
+| 8 | In-Memory Hindi Voice Warnings (gTTS) | Zero-API, in-memory `io.BytesIO` speech synthesis for High/Medium threats without file locking | M1 | R2, R3 |
+| 9 | Rahul Conversational Honeypot | Strike Mode prompt & mock responses using 21yo college student 'Rahul' (zero 'Pushpa Devi' mentions) | M1, M2 | R2, R3 |
+| 10 | Fault-Tolerant Model Lifecycle | Auto-retrains on corrupted pickle, falls back to rule-based engine on missing dataset | M1 | R4 |
+| 11 | Zero Contrast/Readability UI Bugs | Streamlit UI high-contrast cards and text readable in both light and dark mode; `.streamlit/config.toml` | M2 | R2 |
+| 12 | Secure .env-Only API Key Management | API key loaded strictly via `python-dotenv` from `.env`; zero frontend input fields | M2 | R2 |
+| 13 | Sidebar ML Model Performance Metrics | Real-time display of ML accuracy, F1-score, sample count, and engine status in sidebar | M2 | R2 |
+| 14 | Detection Engine Origin Indicator | Clear visual badge indicating `🛡️ Local ML Engine (Offline)` vs `☁️ Gemini Multimodal API` | M2 | R1, R2 |
+| 15 | Omnichannel Tabs & Sentinel Dashboard | Tabs for Text, Screenshot Upload, and Live Threat Simulator with clean cards & auto-playing Hindi warning | M2 | R1, R2 |
+| 16 | Strike Mode Chat Bubble Interface | Interactive multi-turn chat interface using `st.chat_message` for Rahul persona | M2 | R2 |
+| 17 | Comprehensive Test Suite (`test_suite.py`) | 31 programmatic tests verifying ML accuracy, 5 scam / 5 safe, IoC regex, threat logging, voice, imports | M3 | R3 |
+| 18 | Production Dependencies & Manifest | `requirements.txt` containing all required packages (scikit-learn, scipy, joblib, numpy, etc.) | M3 | R4 |
+| 19 | Architecture & Deployment Documentation | Production `README.md` with ASCII architecture diagram, quickstart, ML benchmarks, security | M3 | R4 |
+| 20 | Dual-Track End-to-End Verification | 100% test suite pass rate and forensic integrity audit pass | M4 | Final |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| M1 | Core Backend Engine | backend.py, requirements.txt, .venv package installations (Multimodal Gemini, gTTS BytesIO, threat logging, Rahul honeypot, Hinglish dataset loader, mock engine) | none | DONE |
-| M2 | GovTech Streamlit Web UI | app.py overhaul: State Cyber Police white/blue styling, Omnichannel tabs, Sentinel dashboard, Strike Mode chat, alert banners, graceful API handling | M1 | IN_PROGRESS |
-| M3 | E2E Verification & Hardening | verify.py implementation, automated test suite, 100% E2E pass, adversarial validation | M1, M2 | PLANNED |
+| M1 | Backend Integration & Local ML Primary | `scam_detector.py`, `backend.py`: Wire local ML as primary engine for text, Gemini as secondary for vision/honeypot, IoC regex upgrades, schema normalization, threat logging with CSV injection protection, clean legacy docstring | none | IN_PROGRESS |
+| M2 | Professional Streamlit UI Polish | `app.py`, `.streamlit/config.toml`: Fix all contrast bugs in light/dark mode, remove frontend API key input, sidebar ML metrics card, engine origin badges, Rahul persona consistency | M1 | IN_PROGRESS |
+| M3 | Comprehensive Test Suite & Documentation | `tests/test_suite.py`, `requirements.txt`, `README.md`: 31 test cases, explicit PASS/FAIL, exit 0/1, full dependency manifest, production README | M1 | IN_PROGRESS |
+| M4 | Final Acceptance & Forensic Audit Gate | Run `python tests/test_suite.py` & `python verify.py`, Reviewers, Challengers, Forensic Auditor pass | M1, M2, M3 | PLANNED |
 
 ## Interface Contracts
-### `backend.py` ↔ `app.py` & `verify.py`
+### `backend.py` ↔ Consumers (`app.py`, `tests/test_suite.py`, `verify.py`)
 ```python
 def analyze_threat(
     text: Optional[str] = None,
@@ -49,63 +52,39 @@ def analyze_threat(
     api_key: Optional[str] = None
 ) -> Dict[str, Any]:
     """
-    Analyzes input text or image. Returns dictionary:
+    Analyzes input text or image. Returns normalized dictionary:
     {
         "risk_level": "High" | "Medium" | "Low",
         "confidence_score": float (0.0 to 1.0),
+        "confidence": int (0 to 100),
         "scam_category": str,
-        "red_flags": List[str],
-        "psychological_tactics": List[str],
+        "red_flags": List[str],            # Empty list [] for Low risk
+        "psychological_tactics": List[str],# Empty list [] for Low risk
         "extracted_identifiers": {
             "phone_numbers": List[str],
             "upi_ids": List[str],
             "urls": List[str]
         },
         "recommended_action": str,
-        "hindi_warning_text": str
+        "detection_source": "local_ml" | "gemini_multimodal" | "offline_fallback",
+        "raw_response": Optional[str]
     }
-    """
-
-def generate_voice_warning(
-    threat_data_or_text: Union[Dict[str, Any], str]
-) -> io.BytesIO:
-    """
-    Generates Hindi voice warning audio using gTTS and returns an in-memory BytesIO stream.
-    """
-
-def log_threat(
-    threat_data: Dict[str, Any],
-    file_path: str = "threat_log.csv",
-    source_channel: str = "Unknown"
-) -> bool:
-    """
-    Thread-safely logs High/Medium threat identifiers to threat_log.csv.
-    Mitigates CSV formula injection. Returns True if logged, False otherwise.
-    """
-
-def generate_honeypot_reply(
-    message_or_history: Union[str, List[Dict[str, str]]],
-    api_key: Optional[str] = None
-) -> str:
-    """
-    Generates a Hinglish time-wasting reply in the Pushpa Devi persona.
-    """
-
-def load_sample_threats(
-    csv_path: str = "India_Cyber_Scam_Hinglish_Dataset.csv",
-    n: int = 5
-) -> List[Dict[str, str]]:
-    """
-    Loads distinct scam examples from the Hinglish dataset.
-    Returns list of dicts: [{"category": str, "message": str, "source": str}]
     """
 ```
 
-## Code Layout
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\requirements.txt`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\backend.py`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\app.py`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\verify.py`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\threat_log.csv`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\India_Cyber_Scam_Hinglish_Dataset.csv`
-- `c:\Users\chait\OneDrive\Desktop\Scam Shield\test_images/`
+### `scam_detector.py` ↔ `backend.py` & `app.py`
+```python
+class ScamDetectorML:
+    def predict(self, text: str) -> Dict[str, Any]: ...
+    def get_metrics(self) -> Dict[str, Any]: ...
+    def train(self) -> Dict[str, Any]: ...
+```
+
+### Threat Logging Contract (`threat_log.csv`)
+- Header: `timestamp,source_channel,risk_level,confidence_score,scam_category,identifier_type,identifier_value`
+- All string values starting with `=`, `+`, `-`, `@`, `\t`, `\r` must be escaped with a leading `'`.
+
+## Code Layout & Write Boundaries
+- `backend.py`, `scam_detector.py`: Owned exclusively by Worker M1.
+- `app.py`, `.streamlit/config.toml`: Owned exclusively by Worker M2.
+- `tests/test_suite.py`, `requirements.txt`, `README.md`: Owned exclusively by Worker M3.

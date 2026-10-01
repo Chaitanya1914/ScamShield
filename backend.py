@@ -3,9 +3,9 @@ ScamShield Backend Engine — AI Threat Detection, Multimodal Vision,
 Voice Warning Synthesis, Honeypot Tarpit & Threat Intelligence Logging.
 
 This module provides the computational backbone for ScamShield:
-1. Omnichannel Threat Analysis (SMS/Email text and WhatsApp screenshots via Gemini Multimodal)
+1. Omnichannel Threat Analysis (LOCAL ML primary, Gemini Multimodal optional for images)
 2. Accessible In-Memory Voice Warning Generation in Hindi using gTTS
-3. Offensive AI Honeypot (Pushpa Devi 68yo grandmother persona)
+3. Offensive AI Honeypot (Rahul 21yo confused college student persona)
 4. Thread-Safe Threat Intelligence Logging to CSV with formula injection protection
 5. Dynamic Hinglish Dataset Sampling for live threat simulations
 6. Deterministic Offline Fallback Engines for automated testing without live API keys
@@ -752,10 +752,25 @@ def analyze_threat(
     if not has_text and pil_image is None and not image_source_path:
         return _build_empty_input_response()
 
-    # 2. Check for offline mock mode or missing API key
+    # 2. Route based on input type
     effective_key = (api_key or os.getenv("GEMINI_API_KEY") or "").strip()
     force_mock = os.getenv("SCAMSHIELD_MOCK_MODE", "").strip() == "1" or effective_key.lower() in ("mock", "test", "offline")
 
+    # PRIMARY ENGINE: For text-only analysis, use the LOCAL ML model (zero API keys)
+    if has_text and not has_image:
+        try:
+            from scam_detector import detector as local_ml
+            if not local_ml.is_trained:
+                local_ml.train()
+            result = local_ml.predict(text.strip())
+            result["_detection_engine"] = "ScamShield Local ML (TF-IDF + LR + RF)"
+            logger.info("Text analyzed by LOCAL ML engine (zero API keys).")
+            return result
+        except Exception as e:
+            logger.warning(f"Local ML engine failed ({e}), falling back to offline heuristics.")
+            return _analyze_threat_offline_mock(text=text, image=pil_image, image_source=image_source_path)
+
+    # SECONDARY ENGINE: For image analysis, use Gemini Multimodal (requires API key)
     if force_mock or not effective_key or not GENAI_AVAILABLE:
         logger.info("Executing deterministic offline mock analysis engine.")
         return _analyze_threat_offline_mock(

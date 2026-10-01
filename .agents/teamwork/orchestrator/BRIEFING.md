@@ -1,7 +1,7 @@
-# BRIEFING — 2026-09-28T04:56:00Z
+# BRIEFING — 2026-10-01T01:45:00Z
 
 ## Mission
-Lead and orchestrate the full end-to-end delivery of ScamShield according to ORIGINAL_REQUEST.md.
+Transform ScamShield from a Gemini-API-wrapper prototype into a production-grade, self-sufficient AI scam detection platform with local ML primary engine (zero API keys), clean Streamlit UI, comprehensive test suite, production architecture, and business-ready API.
 
 ## 🔒 My Identity
 - Archetype: orchestrator
@@ -25,15 +25,14 @@ Lead and orchestrate the full end-to-end delivery of ScamShield according to ORI
    - Escalate: report to parent (sub-orchestrators only, last resort)
 4. **Succession**: At 16 spawns, write handoff.md, spawn successor
 - **Work items**:
-  1. Survey & Initial Project Architecture [pending]
-  2. E2E Testing Track Setup [pending]
-  3. Milestone 1: Backend Core, Gemini Integration & Verification Harness [pending]
-  4. Milestone 2: Threat Logging, Identifier Extraction & Hindi Voice Alert (gTTS) [pending]
-  5. Milestone 3: Strike Mode Honeypot (Pushpa Devi) & Live Threat Simulation [pending]
-  6. Milestone 4: Streamlit UI & GovTech Portal Polish [pending]
-  7. Final Milestone: Full E2E Test Suite & Adversarial Hardening [pending]
-- **Current phase**: 0 (Survey)
-- **Current focus**: Survey & initial scoping
+  1. Survey & Architecture Update (3 Explorers) [in-progress]
+  2. Milestone 1: Local ML Engine (scam_detector.py, scamshield_model.pkl, >=90% cv-acc) [pending]
+  3. Milestone 2: Backend Integration & Business-Ready API (backend.py, zero API key local ML primary, Gemini secondary, threat_log.csv injection protection) [pending]
+  4. Milestone 3: Professional Streamlit UI (app.py, zero visual bugs, .env API key, metrics sidebar, Rahul persona) [pending]
+  5. Milestone 4: Comprehensive Test Suite & Documentation (tests/test_suite.py, >=20 tests, README.md, requirements.txt) [pending]
+  6. Final Milestone: Verification & Forensic Audit Gate [pending]
+- **Current phase**: 0 (Survey & Assessment)
+- **Current focus**: Surveying existing code and dataset to plan local ML architecture and milestones
 
 ## 🔒 Key Constraints
 - NEVER write, modify, or create source code files directly.
@@ -44,39 +43,32 @@ Lead and orchestrate the full end-to-end delivery of ScamShield according to ORI
 - Never reuse a subagent after it has delivered its handoff — always spawn fresh.
 
 ## Current Parent
-- Conversation ID: a9d5ebb7-a1d3-4165-b566-3386beefad89
-- Updated: not yet
+- Conversation ID: 120e64dd-19c0-41c6-ac55-a077318c087f
+- Updated: 2026-10-01T01:43:54Z
 
 ## Key Decisions Made
 - Selected Project Orchestration Pattern with Survey phase, Dual-Track E2E testing, and strict Gate validation.
+- Transforming primary detection to offline local ML model trained on India_Cyber_Scam_Hinglish_Dataset.csv (10k samples).
 
 ## Team Roster
 | Agent | Type | Work Item | Status | Conv ID |
 |-------|------|-----------|--------|---------|
-| explorer_survey_1 | teamwork_preview_explorer | Environment & Assets Survey | completed | 3e924ddd-673d-431f-84e9-ca1e420f9c32 |
-| explorer_survey_2 | teamwork_preview_explorer | Backend & Multimodal Survey | completed | edf211e2-bc18-475b-bf34-6a68ebf30fb9 |
-| explorer_survey_3 | teamwork_preview_explorer | UI & Honeypot Survey | completed | d07aa616-28fe-47c5-9dab-651050b1e54a |
-| explorer_m1_1 | teamwork_preview_explorer | M1 Dependency Strategy | completed | 125e5990-0e98-497e-9391-a6f09d4383ba |
-| explorer_m1_2 | teamwork_preview_explorer | M1 Gemini Multimodal Backend | completed | a3d38fea-bc2a-4b82-a88d-90b2856e1856 |
-| explorer_m1_3 | teamwork_preview_explorer | M1 Logging, Voice & Honeypot | completed | b1025132-3241-4d96-9620-e751a3377536 |
-| worker_m1 | teamwork_preview_worker | M1 Backend Core Implementation | completed | 468397dd-9e0b-451a-9b08-c8dba915bcf8 |
-| reviewer_m1_1 | teamwork_preview_reviewer | M1 Backend Conformance Review | completed | 0b69788b-77ef-47c9-a06d-8b3a3e792a70 |
-| reviewer_m1_2 | teamwork_preview_reviewer | M1 Robustness & Windows Review | completed | a9f595d8-c00d-4678-ba1d-13c6fa3128c3 |
-| challenger_m1_1 | teamwork_preview_challenger | M1 Empirical Stress Testing | completed | 20716ff8-6b23-4172-abab-a80696dc0aa9 |
-| challenger_m1_2 | teamwork_preview_challenger | M1 Security & OCR Independence | completed | f0e3bd5a-8624-47c8-86cd-a495a42e8844 |
-| auditor_m1 | teamwork_preview_auditor | M1 Forensic Integrity Audit | completed | a245fd26-e57e-4f50-9e75-05b66eac8b1d |
-| worker_m2 | teamwork_preview_worker | M2 GovTech Streamlit UI | running | 4f0c185e-ef24-41e6-879d-ec945ae82c94 |
-| worker_m3 | teamwork_preview_worker | M3 Verification Script verify.py | running | 0e641a50-9e9e-4c42-8555-e153752b52b9 |
+| explorer_survey_v2_1 | teamwork_preview_explorer | ML Engine & Dataset Survey | completed | 5e00998e-8897-4926-95f1-dacba4d6b4eb |
+| explorer_survey_v2_2 | teamwork_preview_explorer | Backend & API Layer Survey | completed | 4574c9bf-016a-4157-804a-c471d1c2fe04 |
+| explorer_survey_v2_3 | teamwork_preview_explorer | UI & Testing Survey | completed | 8b6baa2b-a9de-4196-abc1-0064915e0dc7 |
+| worker_m1_v2 | teamwork_preview_worker | Backend & Local ML Integration | running | a896e5e1-a15a-42c9-a617-efb5d73cfdd8 |
+| worker_m2_v2 | teamwork_preview_worker | UI Polish & Theme Contrast | running | 0e80cade-131c-4cfb-a0dc-4257e9aa8c21 |
+| worker_m3_v2 | teamwork_preview_worker | Comprehensive Test Suite & Docs | running | 020f13bd-b92f-4f69-86ea-1a10419c8e95 |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 14 / 16
-- Pending subagents: 4f0c185e-ef24-41e6-879d-ec945ae82c94, 0e641a50-9e9e-4c42-8555-e153752b52b9
+- Spawn count: 6 / 16
+- Pending subagents: a896e5e1-a15a-42c9-a617-efb5d73cfdd8, 0e80cade-131c-4cfb-a0dc-4257e9aa8c21, 020f13bd-b92f-4f69-86ea-1a10419c8e95
 - Predecessor: none
 - Successor: not yet spawned
 
 ## Active Timers
-- Heartbeat cron: 0cd799e2-a57f-4f28-ac5b-2327aa460f61/task-14
+- Heartbeat cron: task-24
 - Safety timer: none
 - On succession: kill all timers before spawning successor
 - On context truncation: run `manage_task(Action="list")` — re-create if missing
@@ -86,5 +78,8 @@ Lead and orchestrate the full end-to-end delivery of ScamShield according to ORI
 - .agents/teamwork/orchestrator/progress.md — liveness and workflow status
 - .agents/teamwork/orchestrator/plan.md — execution plan
 - .agents/teamwork/orchestrator/context.md — context notes
+- .agents/teamwork/orchestrator/PROJECT.md — master project architecture, milestones, and contracts
 - .agents/teamwork/ORIGINAL_REQUEST.md — user requirements
-- PROJECT.md — master project architecture, milestones, and contracts
+- .agents/teamwork/orchestrator/GATE_STATUS.md — gate verdict tracking
+- .agents/teamwork/orchestrator/DEAD_ENDS.md — dead ends log
+

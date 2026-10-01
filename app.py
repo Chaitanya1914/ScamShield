@@ -325,13 +325,31 @@ with st.sidebar:
     from dotenv import load_dotenv
     load_dotenv()
     
-    st.markdown("### ⚙️ System Status")
+    st.markdown("### 🧠 Local ML Engine")
+    # Load and display ML model metrics
+    try:
+        from scam_detector import detector as local_ml
+        if local_ml.is_trained:
+            st.success("🟢 **Local ML Model Active**")
+            col_acc, col_f1 = st.columns(2)
+            col_acc.metric("Accuracy", f"{local_ml.training_accuracy * 100:.1f}%")
+            col_f1.metric("CV Score", f"{local_ml.cv_score * 100:.1f}%")
+            st.caption("TF-IDF + Logistic Regression + Random Forest")
+            st.caption("Trained on 10,000 Hinglish messages | Zero API Keys")
+        else:
+            st.warning("⚠️ ML model not trained yet. Run `python scam_detector.py` to train.")
+    except Exception:
+        st.warning("⚠️ Local ML engine unavailable. Using rule-based fallback.")
+
+    st.divider()
+
+    st.markdown("### ⚙️ Cloud API (Optional)")
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
     if api_key:
-        st.success("🟢 **Live Threat Intelligence API Connected**")
+        st.success("🟢 **Gemini API Connected** *(image analysis only)*")
     else:
-        st.error("🔴 **API Offline:** Missing GEMINI_API_KEY in .env file.")
+        st.info("🟡 **Gemini API Offline** — Local ML handles all text detection. API needed only for image analysis.")
 
     st.divider()
 
