@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+
+# Large Datasets & Archives
+*.zip
+*.tar.gz
+*.tar
+data/raw/
+data/unified/train/images/
+data/unified/val/images/
+*.jpg
+*.jpeg
+*.png
+
+# Model Weights & Large Binaries (>100MB)
+models/*.pt
+models/*.onnx
+models/*.engine
+models/*.weights
+models/*.joblib
+*.joblib
+*.pkl
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Reports & Cache
+reports/*.pdf
+.pytest_cache/
+.ipynb_checkpoints/

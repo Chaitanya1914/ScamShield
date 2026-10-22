@@ -1,0 +1,6 @@
+path: C:/Users/HP/OneDrive/Desktop/SemProject/data/unified
+train: train/images
+val: val/images
+
+nc: 5
+names: ['Person', 'Hardhat', 'NO-Hardhat', 'Safety Vest', 'NO-Safety Vest']

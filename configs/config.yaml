@@ -1,0 +1,37 @@
+project:
+  name: "RakshaSite"
+  version: "1.0.0"
+  description: "AI-Powered Construction Safety and BOCW Act Compliance Monitoring"
+
+detection:
+  model_weights: "models/yolov8m.pt"
+  confidence_threshold: 0.45
+  iou_threshold: 0.50
+  image_size: 640
+  temporal_filter_frames: 5  # Violation confirmed after 5 continuous frames
+
+classes:
+  0: "Person"
+  1: "Hardhat"
+  2: "NO-Hardhat"
+  3: "Safety Vest"
+  4: "NO-Safety Vest"
+
+risk_assessment:
+  model_type: "xgboost"
+  model_path: "models/risk_model.json"
+  weights:
+    violation: 40
+    height: 20
+    zone: 15
+    weather: 10
+    workers: 15
+
+rag:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  chroma_db_dir: "knowledge_base/chroma_db"
+  top_k_sections: 3
+
+server:
+  host: "0.0.0.0"
+  port: 8000

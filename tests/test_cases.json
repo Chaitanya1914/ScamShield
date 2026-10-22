@@ -1,0 +1,1928 @@
+[
+  {
+    "test_case_id": "TC_001",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5961133.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5961133.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "DUSTY",
+      "duration_minutes": 33,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 52.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_002",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5953567.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5953567.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "RAINY",
+      "duration_minutes": 8,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 1,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 52.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_003",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5273618.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5273618.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 21.8,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 45,
+      "workers_detected": 3
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 11,
+      "counts_by_class": {
+        "Person": 3,
+        "Hardhat": 3,
+        "NO-Hardhat": 2,
+        "Safety Vest": 3,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 72.4,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_004",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5214968.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5214968.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 2.1,
+      "weather": "DUSTY",
+      "duration_minutes": 25,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 53.7,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_005",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4353611.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4353611.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "DUSTY",
+      "duration_minutes": 25,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 6,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 2,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 54.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_006",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5089160.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5089160.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "OVERCAST",
+      "duration_minutes": 19,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 44.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_007",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4489717.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4489717.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 7.7,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 10,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 57.2,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_008",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5668477.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5668477.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.9,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 16,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 7,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 3,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 53.1,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_009",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-6128992.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-6128992.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "OVERCAST",
+      "duration_minutes": 36,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 5,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 46.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_010",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5973837.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5973837.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 1.8,
+      "weather": "CLEAR",
+      "duration_minutes": 21,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 1,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 45.4,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_011",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5231045.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5231045.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 11.1,
+      "weather": "OVERCAST",
+      "duration_minutes": 37,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 55.9,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_012",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-3818583.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-3818583.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 9.8,
+      "weather": "CLEAR",
+      "duration_minutes": 21,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 54.8,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_013",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5974391.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5974391.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 14.9,
+      "weather": "RAINY",
+      "duration_minutes": 3,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 1,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 66.9,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_014",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4489742.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4489742.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 1.9,
+      "weather": "RAINY",
+      "duration_minutes": 24,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 53.5,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_015",
+    "image_file": "data/unified/val/images/rf_class1_077_jpg.rf.30ea9b013c6d00d846686f45576501d5.jpg",
+    "label_file": "data/unified/val/labels/rf_class1_077_jpg.rf.30ea9b013c6d00d846686f45576501d5.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 19.5,
+      "weather": "OVERCAST",
+      "duration_minutes": 10,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 5,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 1,
+        "NO-Hardhat": 0,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": false,
+      "violation_type": null,
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 10.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [],
+      "penalty_clause": null
+    }
+  },
+  {
+    "test_case_id": "TC_016",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5974290.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5974290.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "RAINY",
+      "duration_minutes": 7,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 45.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_017",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-13937297.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-13937297.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 2.9,
+      "weather": "CLEAR",
+      "duration_minutes": 12,
+      "workers_detected": 9
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 17,
+      "counts_by_class": {
+        "Person": 9,
+        "Hardhat": 3,
+        "NO-Hardhat": 0,
+        "Safety Vest": 5,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": false,
+      "violation_type": null,
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 10.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [],
+      "penalty_clause": null
+    }
+  },
+  {
+    "test_case_id": "TC_018",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-3736103.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-3736103.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.8,
+      "weather": "CLEAR",
+      "duration_minutes": 10,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 5,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 2,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 47.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_019",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4792525.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4792525.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.3,
+      "weather": "DUSTY",
+      "duration_minutes": 42,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 54.6,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_020",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-11427524.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-11427524.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 16.9,
+      "weather": "RAINY",
+      "duration_minutes": 31,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 68.5,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_021",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4353597.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4353597.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 32.6,
+      "weather": "RAINY",
+      "duration_minutes": 39,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 75.0,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_022",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-10202865.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-10202865.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 1.2,
+      "weather": "CLEAR",
+      "duration_minutes": 43,
+      "workers_detected": 6
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 20,
+      "counts_by_class": {
+        "Person": 6,
+        "Hardhat": 6,
+        "NO-Hardhat": 3,
+        "Safety Vest": 5,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 53.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_023",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5414331.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5414331.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 9.7,
+      "weather": "CLEAR",
+      "duration_minutes": 18,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 2,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 54.8,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_024",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4484076.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4484076.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 13.7,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 29,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 2,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 62.0,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_025",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-15200454.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-15200454.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "DUSTY",
+      "duration_minutes": 21,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 52.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_026",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-15304532.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-15304532.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 21,
+      "workers_detected": 4
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 17,
+      "counts_by_class": {
+        "Person": 4,
+        "Hardhat": 8,
+        "NO-Hardhat": 1,
+        "Safety Vest": 4,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 47.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_027",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4491489.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4491489.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "CLEAR",
+      "duration_minutes": 19,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 44.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_028",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-18373966.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-18373966.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.0,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 10,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 50.4,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_029",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-19162212.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-19162212.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 1.7,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 12,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 51.4,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_030",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4254160.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4254160.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "CLEAR",
+      "duration_minutes": 22,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 6,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 2,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 39.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_031",
+    "image_file": "data/unified/val/images/rf_youtube-277_jpg.rf.7de843580b927e1b97aef1bf20310950.jpg",
+    "label_file": "data/unified/val/labels/rf_youtube-277_jpg.rf.7de843580b927e1b97aef1bf20310950.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.2,
+      "weather": "DUSTY",
+      "duration_minutes": 31,
+      "workers_detected": 3
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 8,
+      "counts_by_class": {
+        "Person": 3,
+        "Hardhat": 3,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 2
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_VEST",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 48.6,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_032",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5089138.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5089138.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "RAINY",
+      "duration_minutes": 28,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 2,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 45.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_033",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5953790.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5953790.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 26.5,
+      "weather": "RAINY",
+      "duration_minutes": 8,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 75.0,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_034",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-18111292.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-18111292.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 1.1,
+      "weather": "RAINY",
+      "duration_minutes": 41,
+      "workers_detected": 4
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 18,
+      "counts_by_class": {
+        "Person": 4,
+        "Hardhat": 7,
+        "NO-Hardhat": 3,
+        "Safety Vest": 4,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 58.9,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_035",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-3846544.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-3846544.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 18.4,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 40,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 2,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 65.7,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_036",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5413725.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5413725.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "OVERCAST",
+      "duration_minutes": 5,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 39.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_037",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5186345.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5186345.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 12.6,
+      "weather": "RAINY",
+      "duration_minutes": 14,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 5,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 67.1,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_038",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-18760973.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-18760973.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 2.3,
+      "weather": "RAINY",
+      "duration_minutes": 33,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 53.8,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_039",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5973897.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5973897.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 24.9,
+      "weather": "OVERCAST",
+      "duration_minutes": 13,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 1,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 66.9,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_040",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5327862.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5327862.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 25.0,
+      "weather": "RAINY",
+      "duration_minutes": 45,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 2,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 77.0,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_041",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-17410515.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-17410515.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "DUSTY",
+      "duration_minutes": 32,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 2,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": false,
+      "violation_type": null,
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 10.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [],
+      "penalty_clause": null
+    }
+  },
+  {
+    "test_case_id": "TC_042",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4491871.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4491871.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "OVERCAST",
+      "duration_minutes": 23,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 1,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 37.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_043",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4732350.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4732350.txt",
+    "camera_id": "CAM-05-CRANE",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "RAINY",
+      "duration_minutes": 3,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 2,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": false,
+      "violation_type": null,
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 10.0,
+      "severity_label": "LOW"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [],
+      "penalty_clause": null
+    }
+  },
+  {
+    "test_case_id": "TC_044",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5974351.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5974351.txt",
+    "camera_id": "CAM-02-TOWER",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 2.4,
+      "weather": "CLEAR",
+      "duration_minutes": 36,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 1,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 0,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 45.9,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_045",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5490711.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5490711.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "ROOFTOP",
+      "height_meters": 28.6,
+      "weather": "RAINY",
+      "duration_minutes": 6,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 6,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 1,
+        "NO-Hardhat": 1,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 77.0,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_046",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-6129655.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-6129655.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 9.7,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 31,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 2,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 60.8,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_047",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4620630.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4620630.txt",
+    "camera_id": "CAM-01-GATE",
+    "scene_context": {
+      "zone_type": "CRANE_AREA",
+      "height_meters": 0.0,
+      "weather": "CLEAR",
+      "duration_minutes": 43,
+      "workers_detected": 2
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 2,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 46.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 44 (Duties of Employers Regarding Heavy Machinery)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_048",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-1474993.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-1474993.txt",
+    "camera_id": "CAM-03-FACADE",
+    "scene_context": {
+      "zone_type": "EXCAVATION_SITE",
+      "height_meters": 3.4,
+      "weather": "HOT_HUMID",
+      "duration_minutes": 38,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 2,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 0,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 50.7,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_049",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-4384141.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-4384141.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "GROUND_LEVEL",
+      "height_meters": 0.0,
+      "weather": "DUSTY",
+      "duration_minutes": 8,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 3,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 1,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 45.0,
+      "severity_label": "MEDIUM"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  },
+  {
+    "test_case_id": "TC_050",
+    "image_file": "data/unified/val/images/sh17_pexels-photo-5834974.jpeg",
+    "label_file": "data/unified/val/labels/sh17_pexels-photo-5834974.txt",
+    "camera_id": "CAM-04-BASEMENT",
+    "scene_context": {
+      "zone_type": "SCAFFOLDING",
+      "height_meters": 19.9,
+      "weather": "CLEAR",
+      "duration_minutes": 10,
+      "workers_detected": 1
+    },
+    "ground_truth_objects": {
+      "total_bounding_boxes": 4,
+      "counts_by_class": {
+        "Person": 1,
+        "Hardhat": 0,
+        "NO-Hardhat": 2,
+        "Safety Vest": 1,
+        "NO-Safety Vest": 0
+      }
+    },
+    "expected_detection_result": {
+      "is_violation": true,
+      "violation_type": "NO_HELMET",
+      "filter_consecutive_frames_required": 5
+    },
+    "expected_risk_result": {
+      "calculated_score": 62.9,
+      "severity_label": "HIGH"
+    },
+    "expected_compliance_result": {
+      "applicable_bocw_sections": [
+        "Section 38 (Safety and Health Measures)",
+        "Section 40 (Safety in Scaffolding & Ladder Work)",
+        "Section 39 (Safety Measures for Working at Heights)"
+      ],
+      "penalty_clause": "Section 47: Fine up to Rs. 2,000 and/or imprisonment up to 3 months"
+    }
+  }
+]
